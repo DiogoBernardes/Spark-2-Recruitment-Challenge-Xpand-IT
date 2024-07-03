@@ -1,0 +1,7 @@
+package samples
+
+class AppTest {
+
+}
+
+
