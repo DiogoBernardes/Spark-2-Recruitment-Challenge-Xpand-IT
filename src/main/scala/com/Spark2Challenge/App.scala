@@ -10,6 +10,7 @@ object App {
 
     // Run all the challenges
     AverageSentimentPolarity.run(sparkSession).show()
+    TopRatedApps.run(sparkSession)
 
     sparkSession.stop()
 
