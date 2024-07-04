@@ -1,6 +1,7 @@
 package com.Spark2Challenge
 
 import com.Spark2Challenge.Utils.SparkSessionProvider
+import org.apache.spark.sql.DataFrame
 
 object App {
   def main(args: Array[String]): Unit = {
@@ -9,9 +10,10 @@ object App {
     val sparkSession = SparkSessionProvider.getSession
 
     // Run all the challenges
-    AverageSentimentPolarity.run(sparkSession).show()
+    val df_1 = AverageSentimentPolarity.run(sparkSession)
     TopRatedApps.run(sparkSession)
-    DataProcessing.run(sparkSession).show()
+    val df_3 = DataProcessing.run(sparkSession)
+    CleanedData.run(df_1,df_3)
 
     sparkSession.stop()
 
