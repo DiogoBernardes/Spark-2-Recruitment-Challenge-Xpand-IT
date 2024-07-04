@@ -12,9 +12,11 @@ object App {
     // Run all the challenges
     val df_1 = AverageSentimentPolarity.run(sparkSession)
     TopRatedApps.run(sparkSession)
-    val df_3 = DataProcessing.run(sparkSession)
-    CleanedData.run(df_1,df_3)
+    val df_2 = DataProcessing.run(sparkSession)
+    val df_3 = CleanedData.run(df_1,df_2)
+    GenreMetrics.run(df_3)
 
+    // Stop the Spark Session
     sparkSession.stop()
 
   }
