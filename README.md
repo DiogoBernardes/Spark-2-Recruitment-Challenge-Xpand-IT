@@ -39,6 +39,36 @@ This dataset contains information about the reviews of the users to the mobile a
 * **Part 4:** Combine the results of Parts 1 and 3 into a final DataFrame and save as a Parquet file with gzip compression.
 * **Part 5:** Calculate metrics by gender and save as a Parquet file with gzip compression.
 
+## Project Structure
+This project is organized as follows:
+```
+Spark2-Challenge-Xpand-IT/
+|-- src/
+|   |-- main/                            # Main directory
+|   |   |-- scala/                       # Directory with scala code 
+|   |   |   |-- com/
+|   |   |   |   |-- Spark2Challenge/     # Main package
+|   |   |   |   |   |-- App.scala        # Main application File
+|   |   |   |   |   |-- AverageSentimentPolarity.scala # Calculate average sentiment Polarity File
+|   |   |   |   |   |-- CleanedData.scala # File where are Merged df_1 and df_2 dataframe into df_3 dataframe 
+|   |   |   |   |   |-- DataProcessing.scala # File where data are processed
+|   |   |   |   |   |-- GenreMetrics.scala # File to calculate metrics grouped by genres
+|   |   |   |   |   |-- TopRatedApps.scala # File to identify the Apps with Rating >= 4.0
+|   |   |   |   |   |-- Utils/             # Directory that contain utility helpers
+|   |   |   |   |   |   |-- ReadCSV.scala  # Utility to read CSV files
+|   |   |   |   |   |   |-- SparkSessionProvider.scala # Utility to provide the Spark Session
+|   |   |-- resources/                     # Directory that contain data files and resources
+|   |   |   |-- googleplaystore.csv
+|   |   |   |-- googleplaystore_user_reviews.csv
+|   |-- test/
+|       |-- scala/
+|           |-- samples/
+|           |   |-- junit.scala
+|          
+|-- Dockerfile                             # Script to create a Docker image to set up the runtime environment
+|-- pom.xml                                # Maven configuration file, manages project dependencies and build
+|-- README.md                              # Project documentation file
+```
 
 ## Running the Application
 

@@ -28,5 +28,7 @@ RUN apt-get update && \
 ENV SPARK_HOME /opt/spark
 ENV PATH $SPARK_HOME/bin:$PATH
 
+# Run Maven install
+RUN mvn clean install
 # Start the Spark application using spark-submit
 CMD ["spark-submit", "--class", "com.Spark2Challenge.App", "--master", "local[*]", "/app/Spark2-Challenge-Xpand-IT-1.0-SNAPSHOT.jar"]
