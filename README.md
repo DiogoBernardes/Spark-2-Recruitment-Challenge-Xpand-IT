@@ -70,6 +70,14 @@ Spark2-Challenge-Xpand-IT/
 |-- README.md                              # Project documentation file
 ```
 
+## Plugins Installation
+Before running the project, make sure you have the following IntelliJ IDEA plugins installed:
+
+- **Apache Spark**: Provides support for Spark development in IntelliJ IDEA.
+- **Scala Plugin**: Provides support for Scala development.
+- **Big Data Tools**: For working with big data files such as Parquet, ORC, and Avro.
+- **Big Data File Viewer**: To view and interact with Parquet files directly within IntelliJ IDEA.
+
 ## Running the Application
 
 To run the application we need to:
@@ -86,7 +94,11 @@ docker build -t spark-app .
 ```
 docker run --name Spark2-Challenge-Xpand-IT -it spark-app
 ```
-
+4. After the Docker container is running:
+   1. Open the container on docker
+   2. Go to 'Files' option on topbar
+   3. Open the files main -> src -> resources
+   4. In resources directory there are the created files during the project execution, to see that files u can download it and open it on intellIJ with the Big Data File Viewer Plugin.
 ## Stack
 
 ![Spark](https://img.shields.io/badge/Apache_Spark-FFFFFF?style=for-the-badge&logo=apachespark&logoColor=#E35A16)
